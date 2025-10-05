@@ -14,7 +14,7 @@ class SnakeGame:
         self.clock = pygame.time.Clock()
         self.settings = Settings()
         
-        self.screen: pygame.Surface = pygame.display.set_mode(
+        self.screen = pygame.display.set_mode(
             (self.settings.screen_width, self.settings.screen_height))
            
         pygame.display.set_caption("Snake")

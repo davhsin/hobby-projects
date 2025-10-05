@@ -11,7 +11,7 @@ class Direction(Enum):
 class Snake:
     """ 處理有關蛇的狀態 """
 
-    def __init__(self, snake_game) -> None:
+    def __init__(self, snake_game):
         """ 初始化蛇的屬性 """
         
         # 取得surface，之後在上面畫圖
@@ -29,7 +29,7 @@ class Snake:
         # 初始化蛇的方向，一開始是靜止的
         self.dir = Direction.STOP 
 
-    def draw_snake(self) -> None:
+    def draw_snake(self):
         """ 畫出整隻蛇 """
         for per_rect in self.body:
             # 畫身體 
@@ -39,7 +39,7 @@ class Snake:
             border_rect = per_rect.inflate(border_width * 2, border_width * 2)
             pygame.draw.rect(self.screen, (0, 0, 0), border_rect, border_width)
 
-    def update_body(self, dir) -> None:
+    def update_body(self, dir):
         """先新增頭部至list最前方，再刪除尾巴。"""
         self.body.insert(
             0, pygame.Rect(self.body[0].x, self.body[0].y, 30, 30)) 
